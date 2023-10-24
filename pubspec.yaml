@@ -1,0 +1,121 @@
+name: flutter_clean_architecture
+description: Flutter Clean Architecture Series
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons
+  cupertino_icons: ^1.0.6
+  ionicons: ^0.2.2
+
+  # Networking
+#  dio: ^5.3.3
+
+  # State Management
+  flutter_bloc: ^8.1.2
+
+  # Others
+  flutter_hooks: 0.20.3
+  floor: ^1.4.1
+#  get_it: ^7.2.0
+#  equatable: ^2.0.5
+#  oktoast: ^3.3.1
+#  awesome_dio_interceptor: 1.0.0
+#  auto_route: 7.8.4
+
+
+  #SaifAlmajd Packages
+  firebase_auth: 4.11.1
+  provider: ^6.0.5
+  url_launcher: ^6.1.14
+  firebase_core: 2.19.0
+  firebase_database: 10.3.1
+  cloud_firestore: 4.11.0
+  intro_slider: ^4.2.1
+  http: ^1.1.0
+  toastification: 1.0.2
+  dart_secure: ^0.5.40
+  loading_animation_widget: ^1.2.0+4
+  hexcolor: ^3.0.1
+  google_fonts: ^6.1.0
+  adaptive_theme: ^3.4.1
+  shared_preferences: ^2.2.2
+  introduction_screen: ^3.1.12
+  image_picker: ^1.0.4
+
+
+
+#run flutter pub run flutter_launcher_icons:main
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/logo.png"
+
+
+dev_dependencies:
+
+  #SaifAlmajd Packages
+  device_preview: ^1.1.0
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.12.0"
+  flutter_lints: ^2.0.2
+  local_auth: ^2.1.7
+
+  #OTher
+  lint: ^2.0.1
+  auto_route_generator: 7.3.2
+  retrofit_generator: 8.0.2
+  floor_generator: ^1.4.2
+  build_runner: ^2.3.3
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/appIcons/change_lang_ic.svg
+    - assets/images/appIcons/contact_us_ic.svg
+    - assets/images/appIcons/hollow_cirlce_ic.svg
+    - assets/images/appIcons/invite_friends_ic.svg
+    - assets/images/appIcons/left_arrow_ic.svg
+    - assets/images/appIcons/logout_ic.svg
+    - assets/images/appIcons/photo_camera_ic.svg
+    - assets/images/appIcons/right_arrow_ic.svg
+    - assets/images/appIcons/settings_right_arrow_ic.svg
+    - assets/images/appIcons/solid_circle_ic.svg
+    - assets/images/splash_logo.png
+    - assets/json/empty.json
+    - assets/json/error.json
+    - assets/json/loading.json
+    - assets/json/success.json
+    - assets/translations/ar-SA.json
+    - assets/translations/en-US.json
+
+
+  fonts:
+    - family: Montserrat-Bold
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+    - family: Montserrat-Light
+      fonts:
+        - asset: assets/fonts/Montserrat-Light.ttf
+    - family: Montserrat-Medium
+      fonts:
+        - asset: assets/fonts/Montserrat-Medium.ttf
+    - family: Montserrat-Regular
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+    - family: Montserrat-SemiBold
+      fonts:
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
