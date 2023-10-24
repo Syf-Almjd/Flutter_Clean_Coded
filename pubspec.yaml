@@ -31,23 +31,33 @@ dependencies:
 
 
   #SaifAlmajd Packages
+
+  # UI Libraries
+  adaptive_theme: ^3.4.1
+  intro_slider: ^4.2.1
+  google_fonts: ^6.1.0
+  loading_animation_widget: ^1.2.0+4
+  hexcolor: ^3.0.1
+  toastification: 1.0.2
+
+  # Firebase
   firebase_auth: 4.11.1
-  provider: ^6.0.5
-  url_launcher: ^6.1.14
   firebase_core: 2.19.0
   firebase_database: 10.3.1
   cloud_firestore: 4.11.0
-  intro_slider: ^4.2.1
+
+  # Flutter Core
+  provider: ^6.0.5
   http: ^1.1.0
-  toastification: 1.0.2
   dart_secure: ^0.5.40
-  loading_animation_widget: ^1.2.0+4
-  hexcolor: ^3.0.1
-  google_fonts: ^6.1.0
-  adaptive_theme: ^3.4.1
-  shared_preferences: ^2.2.2
-  introduction_screen: ^3.1.12
   image_picker: ^1.0.4
+  shared_preferences: ^2.2.2
+
+  # Onboarding
+  introduction_screen: ^3.1.12
+
+  # Other
+  url_launcher: ^6.1.14
 
 
 
