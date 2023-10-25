@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body:Center(
         child: ElevatedButton(onPressed: (){
-        }, child: Text("Home")),
+        }, child: const Text("Home")),
       ),
     );
   }

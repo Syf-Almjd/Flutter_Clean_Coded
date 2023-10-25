@@ -148,7 +148,7 @@ Padding logoContainer(context) {
           borderRadius: BorderRadius.circular(50),
           border: Border.all(width: 2),
         ),
-        child: Icon(Icons.person)),
+        child: const Icon(Icons.person)),
 
     // child: const Image(
     //   image: AssetImage(Assets.assetsLogoTransparent),
@@ -170,7 +170,7 @@ Widget chooseFile(context) {
       children: [
         ClipRRect(
             borderRadius: BorderRadius.circular(100),
-            child: Icon(Icons.person)),
+            child: const Icon(Icons.person)),
         // child: const Image(
         //   image: AssetImage(Assets.assetsProfilePicture),
         //   fit: BoxFit.fill,

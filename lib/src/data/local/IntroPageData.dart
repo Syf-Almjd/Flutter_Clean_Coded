@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/src/config/utils/managers/app_assets.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import '../../config/utils/managers/app_assets.dart';
 import '../../presentation/Shared/Components.dart';
 
 List<PageViewModel> listPagesViewModel(context) => [

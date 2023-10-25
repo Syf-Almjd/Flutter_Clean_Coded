@@ -39,19 +39,18 @@ ThemeData getApplicationTheme() {
       // elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              textStyle: getRegularStyle(color: AppColors.white),
-              primary: AppColors.primaryColor,
+              textStyle: getRegularStyle(color: AppColors.white), backgroundColor: AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSize.s12)))),
 
       // Text theme
       textTheme: TextTheme(
-          headline1: getSemiBoldStyle(
+          displayLarge: getSemiBoldStyle(
               color: AppColors.darkColor, fontSize: AppFontSize.s16),
-          subtitle1: getMediumStyle(
+          titleMedium: getMediumStyle(
               color: AppColors.lowPriority, fontSize: AppFontSize.s14),
-          caption: getRegularStyle(color: AppColors.grey),
-          bodyText1: getRegularStyle(color: AppColors.grey)),
+          bodySmall: getRegularStyle(color: AppColors.grey),
+          bodyLarge: getRegularStyle(color: AppColors.grey)),
       // input decoration theme (text form field)
 
       inputDecorationTheme: InputDecorationTheme(
@@ -122,19 +121,18 @@ ThemeData getDarkApplicationTheme() {
       // elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              textStyle: getRegularStyle(color: AppColors.white),
-              primary: AppColors.primaryColor,
+              textStyle: getRegularStyle(color: AppColors.white), backgroundColor: AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSize.s12)))),
 
       // Text theme
       textTheme: TextTheme(
-          headline1: getSemiBoldStyle(
+          displayLarge: getSemiBoldStyle(
               color: AppColors.darkColor, fontSize: AppFontSize.s16),
-          subtitle1: getMediumStyle(
+          titleMedium: getMediumStyle(
               color: AppColors.lowPriority, fontSize: AppFontSize.s14),
-          caption: getRegularStyle(color: AppColors.grey),
-          bodyText1: getRegularStyle(color: AppColors.grey)),
+          bodySmall: getRegularStyle(color: AppColors.grey),
+          bodyLarge: getRegularStyle(color: AppColors.grey)),
       // input decoration theme (text form field)
 
       inputDecorationTheme: InputDecorationTheme(

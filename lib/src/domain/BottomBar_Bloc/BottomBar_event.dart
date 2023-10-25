@@ -1,12 +1,12 @@
-part of 'app_bloc.dart';
+part of 'BottomBar_bloc.dart';
 
 @immutable
-abstract class BaBEvent {}
+abstract class BottomBarEvent {}
 
 @immutable
 abstract class UserEvent {}
 
-class TabChange extends BaBEvent {
+class TabChange extends BottomBarEvent {
   final int currentIndex;
 
   TabChange(this.currentIndex);

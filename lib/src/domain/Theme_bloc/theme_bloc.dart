@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
-import '../../../config/themes/theme_manager.dart';
+import '../../config/themes/theme_manager.dart';
 import 'theme_event.dart';
 
 part 'theme_state.dart';

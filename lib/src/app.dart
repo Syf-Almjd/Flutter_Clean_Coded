@@ -2,12 +2,13 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_clean_architecture/src/domain/userAuthentication.dart';
+import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_data_cubit.dart';
 
 import 'config/utils/managers/app_constants.dart';
-import 'presentation/Cubits/appData_cubit/data_cubit.dart';
-import 'presentation/Cubits/naviBar_cubit/app_bloc.dart';
-import 'presentation/Cubits/navigation_cubit/navi_cubit.dart';
+import 'data/remote/appData_cubit/data_cubit.dart';
+import 'domain/BottomBar_Bloc/BottomBar_bloc.dart';
+import 'domain/appNavi_cubit/navi_cubit.dart';
+import 'domain/userAuth.dart';
 import 'presentation/Cubits/theme_bloc/theme_bloc.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,11 +18,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<AppCubit>(
-          create: (context) => AppCubit(),
+        BlocProvider<RemoteDataCubit>(
+          create: (context) => RemoteDataCubit(),
         ),
-        BlocProvider<BaBBloc>(
-          create: (context) => BaBBloc(),
+        BlocProvider<LocalDataCubit>(
+          create: (context) => LocalDataCubit()..getSharedMap('currentuser'),
+        ),
+        BlocProvider<BottomBarBloc>(
+          create: (context) => BottomBarBloc(),
         ),
         BlocProvider<UserRegisterBloc>(
           create: (context) => UserRegisterBloc(),

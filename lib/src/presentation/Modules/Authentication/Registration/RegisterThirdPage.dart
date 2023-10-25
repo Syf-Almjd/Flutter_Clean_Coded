@@ -3,11 +3,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_data_cubit.dart';
+import 'package:flutter_clean_architecture/src/data/remote/appData_cubit/data_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../../domain/models/UserModel.dart';
-import '../../../Cubits/appData_cubit/data_cubit.dart';
-import '../../../Cubits/naviBar_cubit/app_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/Singleton.dart';
 import '../../../Shared/WidgetBuilders.dart';
@@ -50,7 +51,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
                   size: getWidth(10, context),
                 ),
                 onTap: () {
-                  BlocProvider.of<BaBBloc>(context).add(TabChange(2));
+                  BlocProvider.of<BottomBarBloc>(context).add(TabChange(2));
                 },
               ),
             ),
@@ -63,7 +64,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             textAlign: TextAlign.center,
           ),
         ),
-        Spacer(),
+        const Spacer(),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Container(
@@ -131,8 +132,9 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
         lastLogin: timeNow.toString(),
         address: widget.previousUserData.address);
     Singleton().userDataToBeUploaded = userData;
-    AppCubit.get(context).saveSharedMap('currentuser', userData.toJson()).then(
-        (value) => AppCubit.get(context)
+    LocalDataCubit.get(context)
+        .saveSharedMap('currentuser', userData.toJson())
+        .then((value) => RemoteDataCubit.get(context)
             .userRegister(Singleton().userDataToBeUploaded, context));
   }
 

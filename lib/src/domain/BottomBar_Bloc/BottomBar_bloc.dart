@@ -2,11 +2,11 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/models/UserModel.dart';
-import '../../Shared/Singleton.dart';
+import '../../presentation/Shared/Singleton.dart';
+import '../models/UserModel.dart';
 
-part 'app_event.dart';
-part 'app_state.dart';
+part 'BottomBar_event.dart';
+part 'BottomBar_state.dart';
 
 class UserRegisterBloc extends Bloc<UserEvent, UserState> {
   UserRegisterBloc() : super(UserRegisterDataState(UserModel.empty())) {
@@ -17,9 +17,9 @@ class UserRegisterBloc extends Bloc<UserEvent, UserState> {
   }
 }
 
-class BaBBloc extends Bloc<BaBEvent, BaBState> {
-  BaBBloc() : super(const BaBInitial(0)) {
-    on<BaBEvent>((event, emit) {
+class BottomBarBloc extends Bloc<BottomBarEvent, BottomBarState> {
+  BottomBarBloc() : super(const BaBInitial(0)) {
+    on<BottomBarEvent>((event, emit) {
       if (event is TabChange) {
         switch (event.currentIndex) {
           case (0):

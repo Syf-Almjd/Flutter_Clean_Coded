@@ -11,6 +11,12 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw new FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
@@ -22,11 +28,7 @@ if (flutterVersionCode == null) {
 }
 def FlutterTargetSdkVersion = localProperties.getProperty('flutter.targetSdkVersion')
 if (FlutterTargetSdkVersion == null) {
-    FlutterTargetSdkVersion = '31'
-}
-def FlutterCompileSdkVersion = localProperties.getProperty('flutter.compileSdkVersion')
-if (FlutterCompileSdkVersion == null) {
-    FlutterCompileSdkVersion = '31'
+    FlutterTargetSdkVersion = '33'
 }
 def FlutterMinSdkVersion = localProperties.getProperty('flutter.minSdkVersion')
 if (FlutterMinSdkVersion == null) {
@@ -40,8 +42,8 @@ if (flutterVersionName == null) {
 
 
 android {
-    namespace "com.example.fluttre_clean_coded"
-    compileSdkVersion flutter.compileSdkVersion
+    namespace "com.example.cc.fluttre_clean_coded"
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -65,8 +67,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion FlutterMinSdkVersion.toInteger()
-        compileSdkVersion FlutterTargetSdkVersion.toInteger()
-        targetSdkVersion FlutterCompileSdkVersion.toInteger()
+        targetSdkVersion FlutterTargetSdkVersion.toInteger()
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -82,8 +83,17 @@ android {
         }
         buildTypes {
             release {
-                signingConfig signingConfigs.release
+                shrinkResources true
+                minifyEnabled true
+                if (project.hasProperty('RELEASE_STORE_PASSWORD')) {
+                    signingConfig signingConfigs.release
+                }
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
+        }
+
+        lintOptions {
+            abortOnError false
         }
     }
 }
@@ -96,4 +106,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation("com.google.android.material:material:1.11.0-beta01")
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+
 }

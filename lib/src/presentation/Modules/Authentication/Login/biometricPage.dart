@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_data_cubit.dart';
 
-import '../../../Cubits/appData_cubit/data_cubit.dart';
-import '../../../Cubits/navigation_cubit/navi_cubit.dart';
+import '../../../../domain/appNavi_cubit/navi_cubit.dart';
 import '../../../Shared/Components.dart';
 
 class BiometricLogin extends StatelessWidget {
@@ -15,7 +15,7 @@ class BiometricLogin extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: FutureBuilder<bool>(
-              future: AppCubit.get(context).getBioAuthentication(),
+              future: LocalDataCubit.get(context).getBioAuthentication(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return loadingAnimation();

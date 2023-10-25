@@ -3,10 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/userAuthentication.dart';
-import '../../Modules/Authentication/Login/LoginPage.dart';
-import '../../Modules/Authentication/Login/biometricPage.dart';
-import '../../Modules/Home/HomePage.dart';
+import '../../presentation/Modules/Authentication/Login/LoginPage.dart';
+import '../../presentation/Modules/Authentication/Login/biometricPage.dart';
+import '../../presentation/Modules/Home/HomePage.dart';
+import '../userAuth.dart';
 
 part 'navi_state.dart';
 
@@ -24,12 +24,6 @@ class NaviCubit extends Cubit<NaviState> {
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => widget));
     emit(PagePushedOff(pageName: widget.toString()));
-  }
-
-  void navigateToBiometricLogin(context) {
-    Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => const BiometricLogin()));
-    emit(BiometricLoginState());
   }
 
   void navigateToTempStopPage(context) {
@@ -57,6 +51,12 @@ class NaviCubit extends Cubit<NaviState> {
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const AuthPage()));
     emit(IntoPageState());
+  }
+
+  void navigateToBiometricLogin(context) {
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const BiometricLogin()));
+    emit(BiometricLoginState());
   }
 
   void pop(context, Widget widget) {

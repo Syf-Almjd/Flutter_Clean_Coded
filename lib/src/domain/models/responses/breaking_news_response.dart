@@ -7,7 +7,7 @@ class BreakingNewsResponse extends Equatable {
   final int totalResults;
   final List<Article> articles;
 
-  BreakingNewsResponse({
+  const BreakingNewsResponse({
     required this.status,
     required this.totalResults,
     required this.articles,

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-import '../Cubits/appData_cubit/data_cubit.dart';
+import '../../data/remote/appData_cubit/data_cubit.dart';
 import 'Components.dart';
 
 ///Widget List Builder
@@ -165,7 +165,8 @@ Widget loadButton({
   required Function() onPressed,
   required String buttonText,
 }) {
-  return BlocBuilder<AppCubit, AppStates>(builder: (context, state) {
+  return BlocBuilder<RemoteDataCubit, RemoteAppStates>(
+      builder: (context, state) {
     if (state is GettingData) {
       return loadingAnimation(
           loadingType: LoadingAnimationWidget.beat(

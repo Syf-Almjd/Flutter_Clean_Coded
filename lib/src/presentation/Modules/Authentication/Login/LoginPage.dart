@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/src/data/remote/appData_cubit/data_cubit.dart';
 
-import '../../../Cubits/appData_cubit/data_cubit.dart';
-import '../../../Cubits/naviBar_cubit/app_bloc.dart';
+import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 
@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
                       textAlign: TextAlign.right,
                     ),
                     onTap: () {
-                      BlocProvider.of<BaBBloc>(context).add(TabChange(1));
+                      BlocProvider.of<BottomBarBloc>(context).add(TabChange(1));
                     },
                   ),
                 ),
@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                   buttonText: "Login",
                   onPressed: () {
                     if (validateForm(_validateKey)) {
-                      AppCubit.get(context)
+                      RemoteDataCubit.get(context)
                           .userLogin(email.text, pass.text, context);
                     }
                   })),

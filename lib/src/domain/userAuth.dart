@@ -2,9 +2,10 @@ import 'package:dart_secure/dart_secure.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import '../config/utils/styles/app_colors.dart';
 import '../data/local/IntroPageData.dart';
-import '../presentation/Cubits/navigation_cubit/navi_cubit.dart';
 import '../presentation/Modules/Authentication/AuthenticationLayout.dart';
+import 'appNavi_cubit/navi_cubit.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -32,8 +33,8 @@ class AuthPage extends StatelessWidget {
           dotsDecorator: DotsDecorator(
             size: const Size.square(10.0),
             activeSize: const Size(20.0, 10.0),
-            activeColor: Colors.orangeAccent,
-            color: Colors.black26,
+            activeColor: AppColors.primaryColor,
+            color: AppColors.darkColor,
             spacing: const EdgeInsets.symmetric(horizontal: 3.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),

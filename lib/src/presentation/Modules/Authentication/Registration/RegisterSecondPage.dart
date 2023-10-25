@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
+import '../../../../domain/appNavi_cubit/navi_cubit.dart';
 import '../../../../domain/models/UserModel.dart';
-import '../../../Cubits/naviBar_cubit/app_bloc.dart';
-import '../../../Cubits/navigation_cubit/navi_cubit.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 import '../Login/LoginPage.dart';
@@ -48,7 +48,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                     size: getWidth(10, context),
                   ),
                   onTap: () {
-                    BlocProvider.of<BaBBloc>(context).add(TabChange(1));
+                    BlocProvider.of<BottomBarBloc>(context).add(TabChange(1));
                   },
                 ),
               ),
@@ -73,7 +73,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     labelText: "Email",
-                    prefixIcon: Icon(Icons.email_outlined),
+                    prefixIcon: const Icon(Icons.email_outlined),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -164,7 +164,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                           lastLogin: "");
                       BlocProvider.of<UserRegisterBloc>(context)
                           .add(UpdateUserEvent(userData));
-                      BlocProvider.of<BaBBloc>(context).add(TabChange(3));
+                      BlocProvider.of<BottomBarBloc>(context).add(TabChange(3));
                     }
                   })),
           getCube(5, context),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/src/domain/BottomBar_Bloc/BottomBar_bloc.dart';
 
-import '../../Cubits/naviBar_cubit/app_bloc.dart';
 import '../../Shared/Components.dart';
 import '../../Shared/Singleton.dart';
 import 'Login/LoginPage.dart';
@@ -33,8 +33,8 @@ class _SignLayoutState extends State<SignLayout> {
                           topLeft: Radius.circular(30),
                           topRight: Radius.circular(20)),
                       color: Colors.white),
-                  child:
-                      BlocBuilder<BaBBloc, BaBState>(builder: (context, state) {
+                  child: BlocBuilder<BottomBarBloc, BottomBarState>(
+                      builder: (context, state) {
                     if (state is LoginScreen) {
                       return const Login();
                     }

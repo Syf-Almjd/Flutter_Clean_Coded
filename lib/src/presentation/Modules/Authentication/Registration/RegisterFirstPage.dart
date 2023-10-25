@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../../domain/models/UserModel.dart';
-import '../../../Cubits/naviBar_cubit/app_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 
@@ -44,7 +44,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
                     size: getWidth(10, context),
                   ),
                   onTap: () {
-                    BlocProvider.of<BaBBloc>(context).add(TabChange(0));
+                    BlocProvider.of<BottomBarBloc>(context).add(TabChange(0));
                   },
                 ),
               ),
@@ -137,7 +137,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
                           address: address.text);
                       BlocProvider.of<UserRegisterBloc>(context)
                           .add(UpdateUserEvent(userData));
-                      BlocProvider.of<BaBBloc>(context).add(TabChange(2));
+                      BlocProvider.of<BottomBarBloc>(context).add(TabChange(2));
                     }
                   })),
           getCube(5, context),
