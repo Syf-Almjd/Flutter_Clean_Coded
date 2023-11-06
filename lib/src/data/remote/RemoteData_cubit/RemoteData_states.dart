@@ -1,4 +1,4 @@
-part of 'data_cubit.dart';
+part of 'RemoteData_cubit.dart';
 
 class RemoteAppStates {}
 

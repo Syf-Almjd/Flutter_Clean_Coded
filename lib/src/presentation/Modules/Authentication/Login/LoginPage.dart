@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_clean_architecture/src/data/remote/appData_cubit/data_cubit.dart';
 
+import '../../../../data/remote/RemoteData_cubit/RemoteData_cubit.dart';
 import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';

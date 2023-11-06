@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../remote/appData_cubit/data_cubit.dart';
+import '../../remote/RemoteData_cubit/RemoteData_cubit.dart';
 
 part 'local_data_state.dart';
 

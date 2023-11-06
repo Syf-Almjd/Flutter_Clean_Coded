@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-import '../../data/remote/appData_cubit/data_cubit.dart';
+import '../../data/remote/RemoteData_cubit/RemoteData_cubit.dart';
 import 'Components.dart';
 
 ///Widget List Builder

@@ -11,11 +11,6 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
@@ -42,6 +37,7 @@ if (flutterVersionName == null) {
 
 
 android {
+    // TODO: Specify your own namespace ID (https://developer.android.com/studio/build/application-id.html).
     namespace "com.example.cc.fluttre_clean_coded"
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
@@ -72,28 +68,18 @@ android {
         versionName flutterVersionName
     }
 
-    buildTypes {
-        signingConfigs {
-            release {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-                storePassword keystoreProperties['storePassword']
-            }
-        }
-        buildTypes {
-            release {
-                shrinkResources true
-                minifyEnabled true
-                if (project.hasProperty('RELEASE_STORE_PASSWORD')) {
-                    signingConfig signingConfigs.release
-                }
-                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            }
-        }
 
-        lintOptions {
-            abortOnError false
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -105,7 +91,5 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation("com.google.android.material:material:1.11.0-beta01")
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-
+    implementation("com.google.android.material:material:1.11.0-alpha01")
 }

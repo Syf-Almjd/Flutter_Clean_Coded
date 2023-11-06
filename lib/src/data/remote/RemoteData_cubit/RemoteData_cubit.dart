@@ -7,7 +7,7 @@ import '../../../domain/models/UserModel.dart';
 import '../../../presentation/Shared/Components.dart';
 import '../../local/localData_cubit/local_data_cubit.dart';
 
-part 'data_states.dart';
+part 'RemoteData_states.dart';
 
 class RemoteDataCubit extends Cubit<RemoteAppStates> {
   RemoteDataCubit() : super(InitialAppState());
