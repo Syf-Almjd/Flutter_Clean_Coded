@@ -7,8 +7,8 @@ import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../data/remote/RemoteData_cubit/RemoteData_cubit.dart';
-import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../../domain/models/UserModel.dart';
+import '../../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/Singleton.dart';
 import '../../../Shared/WidgetBuilders.dart';

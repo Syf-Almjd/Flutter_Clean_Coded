@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../domain/BottomBar_Bloc/BottomBar_bloc.dart';
-import '../../../../domain/appNavi_cubit/navi_cubit.dart';
 import '../../../../domain/models/UserModel.dart';
+import '../../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
+import '../../../Cubits/appNavi_cubit/navi_cubit.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 import '../Login/LoginPage.dart';

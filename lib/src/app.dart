@@ -3,12 +3,12 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_data_cubit.dart';
+import 'package:flutter_clean_architecture/src/presentation/Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
+import 'package:flutter_clean_architecture/src/presentation/Cubits/Theme_bloc/theme_bloc.dart';
+import 'package:flutter_clean_architecture/src/presentation/Cubits/appNavi_cubit/navi_cubit.dart';
 
 import 'config/utils/managers/app_constants.dart';
 import 'data/remote/RemoteData_cubit/RemoteData_cubit.dart';
-import 'domain/BottomBar_Bloc/BottomBar_bloc.dart';
-import 'domain/Theme_bloc/theme_bloc.dart';
-import 'domain/appNavi_cubit/navi_cubit.dart';
 import 'domain/userAuth.dart';
 
 class MyApp extends StatelessWidget {

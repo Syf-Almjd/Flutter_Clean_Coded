@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/appNavi_cubit/navi_cubit.dart';
 import '../../../domain/models/UserModel.dart';
 import '../../../presentation/Shared/Components.dart';
 import '../../local/localData_cubit/local_data_cubit.dart';
@@ -65,8 +64,6 @@ class RemoteDataCubit extends Cubit<RemoteAppStates> {
       showToast("Successful Login", context);
 
       emit(GetDataSuccessful());
-
-      NaviCubit.get(context).navigateToHome(context);
     } on FirebaseAuthException {
       showToast("Successful Error", context);
 
@@ -90,8 +87,6 @@ class RemoteDataCubit extends Cubit<RemoteAppStates> {
           .whenComplete(
               () => LocalDataCubit.get(context).updateSharedUser(context));
       showToast("Successful Login", context);
-
-      NaviCubit.get(context).navigateToHome(context);
 
       emit(GetDataSuccessful());
     } catch (error) {

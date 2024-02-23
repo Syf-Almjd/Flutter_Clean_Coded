@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../presentation/Shared/Singleton.dart';
-import '../models/UserModel.dart';
+import '../../../domain/models/UserModel.dart';
+import '../../Shared/Singleton.dart';
 
 part 'BottomBar_event.dart';
 part 'BottomBar_state.dart';

@@ -7,6 +7,8 @@ import '../utils/styles/app_textstyles.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData.light().copyWith(
+      colorScheme: const ColorScheme.light()
+          .copyWith(primary: AppColors.primaryColor, shadow: AppColors.white),
       // main colors of the app
       primaryColor: AppColors.primaryColor,
       shadowColor: AppColors.lowPriority,
@@ -39,7 +41,8 @@ ThemeData getApplicationTheme() {
       // elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              textStyle: getRegularStyle(color: AppColors.white), backgroundColor: AppColors.primaryColor,
+              textStyle: getRegularStyle(color: AppColors.white),
+              backgroundColor: AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSize.s12)))),
 
@@ -89,6 +92,8 @@ ThemeData getApplicationTheme() {
 
 ThemeData getDarkApplicationTheme() {
   return ThemeData.dark().copyWith(
+      colorScheme: const ColorScheme.light()
+          .copyWith(primary: AppColors.primaryColor, shadow: AppColors.white),
       // main colors of the app
       primaryColor: AppColors.primaryColor,
       shadowColor: AppColors.lowPriority,
@@ -121,7 +126,8 @@ ThemeData getDarkApplicationTheme() {
       // elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              textStyle: getRegularStyle(color: AppColors.white), backgroundColor: AppColors.primaryColor,
+              textStyle: getRegularStyle(color: AppColors.white),
+              backgroundColor: AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSize.s12)))),
 

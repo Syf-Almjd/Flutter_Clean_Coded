@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_clean_architecture/src/domain/BottomBar_Bloc/BottomBar_bloc.dart';
 
+import '../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../Shared/Components.dart';
 import '../../Shared/Singleton.dart';
 import 'Login/LoginPage.dart';

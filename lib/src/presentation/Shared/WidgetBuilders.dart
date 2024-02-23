@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
+import '../../config/utils/styles/app_colors.dart';
+import '../../data/local/localData_cubit/local_data_cubit.dart';
 import '../../data/remote/RemoteData_cubit/RemoteData_cubit.dart';
 import 'Components.dart';
 
@@ -170,18 +172,18 @@ Widget loadButton({
     if (state is GettingData) {
       return loadingAnimation(
           loadingType: LoadingAnimationWidget.beat(
-              color: Colors.yellow, size: getWidth(10, context)));
+              color: AppColors.primaryColor, size: getWidth(10, context)));
     } else {
       return Container(
         width: buttonWidth ?? getWidth(80, context),
         height: buttonHeight ?? 60.0,
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: ElevatedButton(
+        child: FilledButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            elevation: buttonElevation ?? 10.0,
+            elevation: buttonElevation ?? 0.0,
           ),
           onPressed: onPressed,
           child: Text(
@@ -197,42 +199,86 @@ Widget loadButton({
 }
 
 ///For photo preview
-Widget previewImage(fileUser, context) {
+Widget previewImage(
+    {double padding = 5.0,
+    Color backgroundColor = Colors.transparent,
+    double photoRadius = 15.0,
+    required fileUser,
+    bool editable = false,
+    VoidCallback? onTap,
+    required context}) {
   fileUser = base64Decode(fileUser);
-  return Stack(
-    children: [
-      Container(
-        decoration:
-            const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-        child: Center(
+
+  return InkWell(
+    splashColor: Colors.transparent,
+    onTap: onTap ?? () {},
+    child: Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: backgroundColor,
+          ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipOval(
-              child: Image.memory(
-                fileUser,
-                height: getHeight(15, context),
-                width: getWidth(32, context),
-                fit: BoxFit.cover,
+            padding: EdgeInsets.all(padding),
+            child: Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(photoRadius),
+                child: Image.memory(
+                  fileUser,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
         ),
-      ),
-      Positioned(
-        bottom: 7,
-        right: 7,
-        child: Container(
-          width: 35,
-          height: 35,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100), color: Colors.black12),
-          child: const Icon(
-            Icons.mode_edit_outline_outlined,
-            color: Colors.black,
-            size: 20,
+        Visibility(
+          visible: editable,
+          replacement: Container(),
+          child: Positioned(
+            bottom: 7,
+            right: 7,
+            child: Container(
+              width: 35,
+              height: 35,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.black12),
+              child: const Icon(
+                Icons.mode_edit_outline_outlined,
+                color: Colors.black,
+                size: 20,
+              ),
+            ),
           ),
         ),
-      ),
-    ],
+      ],
+    ),
+  );
+}
+
+Widget getSkeletonLoading() {
+  return Builder(
+    builder: (context) {
+      final stateLocalData = context.watch<LocalDataCubit>().state;
+      final stateRemoteData = context.watch<RemoteDataCubit>().state;
+      if (stateLocalData is GettingLocalData ||
+          stateRemoteData is GettingData) {
+        return Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: 50,
+            children: List.generate(10, (index) {
+              return Container(
+                height: getHeight(20, context),
+                width: getWidth(90, context),
+                decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(20)),
+              );
+            }));
+      } else {
+        return Container();
+      }
+    },
   );
 }

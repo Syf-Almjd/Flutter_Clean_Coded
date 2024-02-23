@@ -79,53 +79,54 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.12.0"
-  flutter_lints: ^2.0.2
-  local_auth: ^2.1.7
+  flutter_lints: ^3.0.1
+  local_auth: ^2.2.0
 
   #OTher
-  lint: ^2.0.1
+  lint: ^2.3.0
   auto_route_generator: 7.3.2
-  retrofit_generator: 8.0.2
+  retrofit_generator: ^8.1.0
   floor_generator: ^1.4.2
-  build_runner: ^2.3.3
+  build_runner: ^2.4.8
 
 flutter:
   uses-material-design: true
 
 
   assets:
-    - assets/images/appIcons/change_lang_ic.svg
-    - assets/images/appIcons/contact_us_ic.svg
-    - assets/images/appIcons/hollow_cirlce_ic.svg
-    - assets/images/appIcons/invite_friends_ic.svg
-    - assets/images/appIcons/left_arrow_ic.svg
-    - assets/images/appIcons/logout_ic.svg
-    - assets/images/appIcons/photo_camera_ic.svg
-    - assets/images/appIcons/right_arrow_ic.svg
-    - assets/images/appIcons/settings_right_arrow_ic.svg
-    - assets/images/appIcons/solid_circle_ic.svg
-    - assets/images/splash_logo.png
-    - assets/json/empty.json
-    - assets/json/error.json
-    - assets/json/loading.json
-    - assets/json/success.json
-    - assets/translations/ar-SA.json
-    - assets/translations/en-US.json
+    - assets/
 
 
   fonts:
     - family: Montserrat-Bold
       fonts:
         - asset: assets/fonts/Montserrat-Bold.ttf
-    - family: Montserrat-Light
-      fonts:
-        - asset: assets/fonts/Montserrat-Light.ttf
-    - family: Montserrat-Medium
-      fonts:
+          weight: 700
+
         - asset: assets/fonts/Montserrat-Medium.ttf
-    - family: Montserrat-Regular
-      fonts:
-        - asset: assets/fonts/Montserrat-Regular.ttf
-    - family: Montserrat-SemiBold
-      fonts:
-        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          style: normal
+          weight: 400
+
+        - asset: assets/fonts/Montserrat-Light.ttf
+          style: italic
+          weight: 200
+
+
+
+#  fonts:
+#
+#    - family: Montserrat-Bold
+#      fonts:
+#        - asset: assets/fonts/Montserrat-Bold.ttf
+#    - family: Montserrat-Light
+#      fonts:
+#        - asset: assets/fonts/Montserrat-Light.ttf
+#    - family: Montserrat-Medium
+#      fonts:
+#        - asset: assets/fonts/Montserrat-Medium.ttf
+#    - family: Montserrat-Regular
+#      fonts:
+#        - asset: assets/fonts/Montserrat-Regular.ttf
+#    - family: Montserrat-SemiBold
+#      fonts:
+#        - asset: assets/fonts/Montserrat-SemiBold.ttf
