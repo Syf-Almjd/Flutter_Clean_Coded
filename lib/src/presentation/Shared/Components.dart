@@ -1,15 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/src/config/utils/managers/app_extensions.dart';
+import 'package:flutter_clean_architecture/src/data/remote/RemoteData_cubit/RemoteData_cubit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:toastification/toastification.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../config/utils/managers/app_assets.dart';
 import '../../config/utils/styles/app_colors.dart';
-import '../Cubits/appNavi_cubit/navi_cubit.dart';
+import '../Cubits/navigation_cubit/navi_cubit.dart';
 
 TextStyle fontAlmarai(
     {double? size, Color? textColor, FontWeight? fontWeight}) {
@@ -89,11 +89,11 @@ Widget textFieldA({
     key: key,
     controller: controller,
     obscureText: obscureText ?? false,
-    cursorColor: HexColor("#4f4f4f"),
+    cursorColor: AppColors.primaryColor,
     textAlign: textAlign,
     decoration: InputDecoration(
       hintText: hintText,
-      fillColor: HexColor("#f2f3ff"),
+      fillColor: AppColors.primaryColor,
       contentPadding: EdgeInsets.all(internalPadding ?? 20),
       hintStyle: GoogleFonts.almarai(
         fontSize: 15,
@@ -104,7 +104,7 @@ Widget textFieldA({
         borderSide: BorderSide.none,
       ),
       prefixIcon: prefixIcon,
-      prefixIconColor: HexColor("#4f4f4f"),
+      prefixIconColor: AppColors.primaryColor,
       filled: true,
     ),
     onChanged: onChanged,
@@ -128,7 +128,7 @@ Widget buttonA({
       height: (height ?? 55).toDouble(),
       width: (height ?? 275).toDouble(),
       decoration: BoxDecoration(
-        color: (color ?? HexColor('#ebcd34')),
+        color: (color ?? AppColors.primaryColor),
         borderRadius: BorderRadius.circular(
           (borderSize ?? 17).toDouble(),
         ),
@@ -166,7 +166,7 @@ Padding logoContainer(context) {
 //Show a toast
 void showToast(String text, Color color, context) => toastification.show(
       context: context,
-      title: (text.toString()),
+      title: Text(text),
       alignment: Alignment.bottomCenter,
       primaryColor: color,
       dragToClose: true,
@@ -258,16 +258,9 @@ void openUrl(String url) {
   );
 }
 
-String getCurrentUserAttendance() {
-  return "${AppConstants.attendanceStaffCollection}/${FirebaseAuth.instance.currentUser?.uid}/${AppConstants.attendanceRecordCollection}";
-}
-
-Future<String> getLocationName(
+Future<String> getLocationName(context,
     {required String latitude, required String longitude}) async {
-  var location = await HttpRequestPage.getCityInfoAPI(latitude, longitude);
+  var location =
+      await RemoteDataCubit.get(context).getCityInfoAPI(latitude, longitude);
   return location!["city"];
-}
-
-String getCurrentUserEleave() {
-  return "${AppConstants.eLeaveStaffCollection}/${FirebaseAuth.instance.currentUser?.uid}/${AppConstants.eLeaveRecordCollection}";
 }

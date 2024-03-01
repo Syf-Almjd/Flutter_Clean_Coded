@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/utils/styles/app_colors.dart';
 import '../../../../data/remote/RemoteData_cubit/RemoteData_cubit.dart';
 import '../../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../Shared/Components.dart';
@@ -40,7 +41,8 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || !value.contains('@')) {
-                      showToast("Your Email is incorrect!", context);
+                      showToast("Your Email is incorrect!",
+                          AppColors.primaryColor, context);
                       return "Your Email is incorrect";
                     }
                     return null;
@@ -58,7 +60,8 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || value.length <= 4) {
-                      showToast("Wrong Password", context);
+                      showToast(
+                          "Wrong Password", AppColors.primaryColor, context);
                       return "Wrong Password";
                     }
                     return null;

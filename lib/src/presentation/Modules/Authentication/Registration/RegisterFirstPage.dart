@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/utils/styles/app_colors.dart';
 import '../../../../domain/models/UserModel.dart';
 import '../../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 
 class RegisterFirstPage extends StatefulWidget {
-  const RegisterFirstPage({Key? key}) : super(key: key);
+  const RegisterFirstPage({super.key});
 
   @override
   State<RegisterFirstPage> createState() => _RegisterFirstPageState();
@@ -64,7 +65,8 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty) {
-                      showToast("Your name is empty!", context);
+                      showToast("Your name is empty!", AppColors.primaryColor,
+                          context);
                       return 'Your name is empty';
                     } else {
                       return null;
@@ -83,7 +85,8 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || !value.contains('0')) {
-                      showToast("Your number is invalid!", context);
+                      showToast("Your number is invalid!",
+                          AppColors.primaryColor, context);
                       return 'Your number is invalid';
                     } else {
                       return null;
@@ -102,7 +105,8 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || value.length <= 8) {
-                      showToast("Your address is short!", context);
+                      showToast("Your address is short!",
+                          AppColors.primaryColor, context);
                       return 'Your address is short';
                     } else {
                       return null;

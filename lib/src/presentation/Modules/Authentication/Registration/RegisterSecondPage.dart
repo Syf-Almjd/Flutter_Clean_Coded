@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/utils/styles/app_colors.dart';
 import '../../../../domain/models/UserModel.dart';
 import '../../../Cubits/BottomBar_Bloc/BottomBar_bloc.dart';
-import '../../../Cubits/appNavi_cubit/navi_cubit.dart';
+import '../../../Cubits/navigation_cubit/navi_cubit.dart';
 import '../../../Shared/Components.dart';
 import '../../../Shared/WidgetBuilders.dart';
 import '../Login/LoginPage.dart';
@@ -62,7 +63,8 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || !value.contains('@')) {
-                      showToast("Your email is incorrect!", context);
+                      showToast("Your email is incorrect!",
+                          AppColors.primaryColor, context);
                       return 'Your email is incorrect';
                     } else {
                       return null;
@@ -81,7 +83,8 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || value.length <= 8) {
-                      showToast("Use a stronger password!", context);
+                      showToast("Use a stronger password!",
+                          AppColors.primaryColor, context);
                       return 'Use a stronger password';
                     } else {
                       return null;
@@ -108,7 +111,8 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty || !(value == password.text)) {
-                      showToast("Your password doesn't match!", context);
+                      showToast("Your password doesn't match!",
+                          AppColors.primaryColor, context);
                       return "Your password doesn't match";
                     } else {
                       return null;

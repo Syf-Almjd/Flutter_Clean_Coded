@@ -3,6 +3,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/src/config/utils/managers/app_constants.dart';
+import 'package:flutter_clean_architecture/src/config/utils/styles/app_colors.dart';
 import 'package:flutter_clean_architecture/src/data/local/localData_cubit/local_data_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,8 +18,7 @@ import '../../../Shared/WidgetBuilders.dart';
 class RegisterThirdPage extends StatefulWidget {
   final UserModel previousUserData;
 
-  const RegisterThirdPage({Key? key, required this.previousUserData})
-      : super(key: key);
+  const RegisterThirdPage({super.key, required this.previousUserData});
 
   @override
   State<RegisterThirdPage> createState() => _RegisterThirdPageState();
@@ -84,8 +85,12 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
                   children: [
                     Center(
                       child: (_imageBytes != null)
-                          ? previewImage(_imageBytes, context)
-                          : chooseFile(context),
+                          ? previewImage(
+                              context: context, fileUser: _imageBytes)
+                          : previewImage(
+                              context: context,
+                              editable: true,
+                              fileUser: AppConstants.noPhoto),
                     ),
                   ],
                 ),
@@ -113,7 +118,8 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
                   if (_imageBytes != null) {
                     signUser(_imageBytes);
                   } else {
-                    showToast('Choose a photo', context);
+                    showToast(
+                        'Choose a photo', AppColors.primaryColor, context);
                   }
                 })),
         getCube(5, context),

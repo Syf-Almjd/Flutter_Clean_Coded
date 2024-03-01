@@ -4,7 +4,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import '../config/utils/styles/app_colors.dart';
 import '../data/local/IntroPageData.dart';
-import '../presentation/Cubits/appNavi_cubit/navi_cubit.dart';
+import '../presentation/Cubits/navigation_cubit/navi_cubit.dart';
 import '../presentation/Modules/Authentication/AuthenticationLayout.dart';
 
 class AuthPage extends StatelessWidget {

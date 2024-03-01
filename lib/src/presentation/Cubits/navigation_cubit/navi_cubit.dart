@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../data/local/localData_cubit/local_data_cubit.dart';
 import '../../../domain/userAuth.dart';
 import '../../Modules/Authentication/Login/LoginPage.dart';
 import '../../Modules/Authentication/Login/biometricPage.dart';
@@ -35,8 +36,12 @@ class NaviCubit extends Cubit<NaviState> {
   }
 
   void navigateToHome(context) {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+    /// Remove all routes from the stack
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+      (route) => false,
+    );
     emit(HomeState());
   }
 
@@ -46,8 +51,9 @@ class NaviCubit extends Cubit<NaviState> {
     emit(AdminState());
   }
 
-  void navigateToSliderLogout(context) {
-    FirebaseAuth.instance.signOut();
+  Future<void> navigateToSliderLogout(context) async {
+    await FirebaseAuth.instance.signOut();
+    await LocalDataCubit.get(context).clearSharedAll();
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const AuthPage()));
     emit(IntoPageState());
@@ -59,7 +65,7 @@ class NaviCubit extends Cubit<NaviState> {
     emit(BiometricLoginState());
   }
 
-  void pop(context, Widget widget) {
+  void pop(context) {
     final currentRoute = ModalRoute.of(context);
     // Check if there is a previous route in the navigation stack
     if (currentRoute != null && currentRoute.canPop) {

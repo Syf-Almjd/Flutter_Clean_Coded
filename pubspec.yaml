@@ -15,66 +15,59 @@ dependencies:
   ionicons: ^0.2.2
 
   # Networking
-#  dio: ^5.3.3
+  dio: ^5.4.1
+  http: ^1.2.0
 
   # State Management
-  flutter_bloc: ^8.1.2
+  flutter_bloc: ^8.1.4
 
   # Others
-  flutter_hooks: 0.20.3
-  floor: ^1.4.1
-#  get_it: ^7.2.0
-#  equatable: ^2.0.5
-#  oktoast: ^3.3.1
-#  awesome_dio_interceptor: 1.0.0
-#  auto_route: 7.8.4
+  flutter_hooks: ^0.20.5
+  floor: ^1.4.2
+  # get_it: ^7.2.0
+  # equatable: ^2.0.5
+  # oktoast: ^3.3.1
+  # awesome_dio_interceptor: 1.0.0
+  # auto_route: 7.8.4
 
-
-  #SaifAlmajd Packages
 
   # UI Libraries
-  adaptive_theme: ^3.4.1
+  adaptive_theme: ^3.6.0
   intro_slider: ^4.2.1
   google_fonts: ^6.1.0
   loading_animation_widget: ^1.2.0+4
   hexcolor: ^3.0.1
-  toastification: 1.0.2
+  toastification: ^1.2.1
 
   # Firebase
-  firebase_auth: 4.11.1
-  firebase_core: 2.19.0
-  firebase_database: 10.3.1
-  cloud_firestore: 4.11.0
+  firebase_auth: ^4.17.6
+  firebase_core: ^2.25.5
+  firebase_database: ^10.4.7
+  cloud_firestore: ^4.15.6
 
   # Flutter Core
-  provider: ^6.0.5
-  http: ^1.1.0
-  dart_secure: ^0.5.40
-  image_picker: ^1.0.4
+  provider: ^6.1.2
+  dart_secure: ^0.5.41
+  image_picker: ^1.0.7
   shared_preferences: ^2.2.2
 
   # Onboarding
   introduction_screen: ^3.1.12
 
   # Other
-  url_launcher: ^6.1.14
+  url_launcher: ^6.2.5
 
-
-
-#run flutter pub run flutter_launcher_icons:main
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/logo.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+  min_sdk_android: 21
   web:
     generate: true
     image_path: "assets/images/logo.png"
 
-
 dev_dependencies:
-
-  #SaifAlmajd Packages
+  # SaifAlmajd Packages
   device_preview: ^1.1.0
   flutter_test:
     sdk: flutter
@@ -82,7 +75,7 @@ dev_dependencies:
   flutter_lints: ^3.0.1
   local_auth: ^2.2.0
 
-  #OTher
+  # Other
   lint: ^2.3.0
   auto_route_generator: 7.3.2
   retrofit_generator: ^8.1.0
@@ -91,11 +84,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-
   assets:
     - assets/
-
 
   fonts:
     - family: Montserrat-Bold
@@ -109,24 +99,3 @@ flutter:
 
         - asset: assets/fonts/Montserrat-Light.ttf
           style: italic
-          weight: 200
-
-
-
-#  fonts:
-#
-#    - family: Montserrat-Bold
-#      fonts:
-#        - asset: assets/fonts/Montserrat-Bold.ttf
-#    - family: Montserrat-Light
-#      fonts:
-#        - asset: assets/fonts/Montserrat-Light.ttf
-#    - family: Montserrat-Medium
-#      fonts:
-#        - asset: assets/fonts/Montserrat-Medium.ttf
-#    - family: Montserrat-Regular
-#      fonts:
-#        - asset: assets/fonts/Montserrat-Regular.ttf
-#    - family: Montserrat-SemiBold
-#      fonts:
-#        - asset: assets/fonts/Montserrat-SemiBold.ttf
