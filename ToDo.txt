@@ -147,3 +147,26 @@ Make sure to replace `"name of website"` with the actual name of your website in
    Don't print DIO 
 
 
+
+### For IOS Build:
+   cd ios
+   pod init 
+   change iOS build to:  14
+   pod install 
+   xed .
+   build for distribution: No
+   user script sandbox: No
+   change runner build to: 14 
+   run build
+
+### For IOS Release:
+   Download Apple Developer from the Apple App Store
+   sign in to the account 
+   build ios
+   archive ios (Product>Archive)
+   distribute (Window>Organizer)
+   choose signing algorthem 
+   release 
+
+
+
