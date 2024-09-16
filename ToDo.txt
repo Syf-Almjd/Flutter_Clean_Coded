@@ -155,6 +155,7 @@ Make sure to replace `"name of website"` with the actual name of your website in
    change iOS build to:  14
    pod install 
    xed .
+   in Runner (PROJECT):
    build for distribution: No
    user script sandbox: No
    change runner build to: 14 
