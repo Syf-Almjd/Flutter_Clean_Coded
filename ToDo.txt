@@ -171,4 +171,12 @@ Make sure to replace `"name of website"` with the actual name of your website in
    release 
 
 
+### IOS CACHE Clean
+   flutter clean
+   rm -rf ~/Library/Developer/Xcode/DerivedData
+   Go to Xcode App then use the shortcut `Shift + Command + K`
+   rm -rf ~/Library/Caches/com.apple.dt.Xcode
+
+
+
 
