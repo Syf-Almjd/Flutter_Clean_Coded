@@ -158,6 +158,7 @@ Make sure to replace `"name of website"` with the actual name of your website in
    in Runner (PROJECT):
    build for distribution: No
    user script sandbox: No
+   Include of non-modular header inside framework module: Yes
    change runner build to: 14 
    run build
 
