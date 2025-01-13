@@ -3,11 +3,16 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  cloud_firestore
-  file_selector_windows
+  awesome_notifications
+  awesome_notifications_core
+  connectivity_plus
   firebase_auth
   firebase_core
+  flutter_inappwebview_windows
+  flutter_secure_storage_windows
   local_auth_windows
+  rive_common
+  share_plus
   url_launcher_windows
 )
 

@@ -1,101 +1,125 @@
-name: flutter_clean_architecture
-description: Flutter Clean Architecture Series
+name: flutter_clean_coded
+description: Flutter Clean Architecture Series to build a Flutter App with Clean Code!
 publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+  sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   # Icons
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
   ionicons: ^0.2.2
 
+  # UI
+  introduction_screen: ^3.1.14
+  lottie: ^3.2.0
+  rive: ^0.13.14
+
+
+  # DI
+  get_it: ^8.0.3
+
   # Networking
-  dio: ^5.4.1
-  http: ^1.2.0
+  dio: ^5.7.0
+  internet_connection_checker_plus: ^2.6.0
 
   # State Management
-  flutter_bloc: ^8.1.4
-
-  # Others
-  flutter_hooks: ^0.20.5
-  floor: ^1.4.2
-  # get_it: ^7.2.0
-  # equatable: ^2.0.5
-  # oktoast: ^3.3.1
-  # awesome_dio_interceptor: 1.0.0
-  # auto_route: 7.8.4
-
+  flutter_bloc: ^8.1.6
 
   # UI Libraries
-  adaptive_theme: ^3.6.0
-  intro_slider: ^4.2.1
-  google_fonts: ^6.1.0
-  loading_animation_widget: ^1.2.0+4
-  hexcolor: ^3.0.1
-  toastification: ^1.2.1
+  loading_animation_widget: ^1.3.0
+  toastification: ^2.3.0
+  animate_do: ^3.3.4
+  pretty_dio_logger: ^1.4.0
+  fl_chart: ^0.55.0
 
-  # Firebase
-  firebase_auth: ^4.17.6
-  firebase_core: ^2.25.5
-  firebase_database: ^10.4.7
-  cloud_firestore: ^4.15.6
+
+  # Notification
+  awesome_notifications_core: ^0.9.3
+  awesome_notifications: ^0.9.3+1
+
 
   # Flutter Core
-  provider: ^6.1.2
   dart_secure: ^0.5.41
-  image_picker: ^1.0.7
-  shared_preferences: ^2.2.2
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.4
+  url_launcher: ^6.3.1
+  share_plus: ^10.1.3
+  pdf: ^3.10.8
+  qr_flutter: ^4.1.0
+  syncfusion_flutter_datepicker: ^24.2.9
+  flutter_inappwebview: ^6.1.15
 
-  # Onboarding
-  introduction_screen: ^3.1.12
 
-  # Other
-  url_launcher: ^6.2.5
+  # App Logging
+#  firebase_crashlytics: ^4.2.0
+#  firebase_analytics: ^11.3.6
+#  firebase_performance: ^0.10.0+11
 
+  # cache
+  cached_network_image: ^3.4.1
+
+
+dependency_overrides:
+  intl: ^0.20.1
+
+#dart run flutter_launcher_icons
 flutter_icons:
-  android: "launcher_icon"
+  android: "ic_launcher"
   ios: true
-  image_path: "assets/images/logo.png"
+  remove_alpha_ios: true
+  image_path: "assets/images/app_logo.png"
   min_sdk_android: 21
   web:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/images/app_logo.png"
+
+
+
 
 dev_dependencies:
-  # SaifAlmajd Packages
-  device_preview: ^1.1.0
+  # Dev Core Packages
+  device_preview: ^1.2.0
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.12.0"
-  flutter_lints: ^3.0.1
-  local_auth: ^2.2.0
 
   # Other
+  flutter_lints: ^5.0.0
   lint: ^2.3.0
-  auto_route_generator: 7.3.2
-  retrofit_generator: ^8.1.0
-  floor_generator: ^1.4.2
-  build_runner: ^2.4.8
+
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/font/
+    - assets/icons/
+    - assets/images/
+    - assets/animations/
 
   fonts:
-    - family: Montserrat-Bold
+    - family: OpenSans
       fonts:
-        - asset: assets/fonts/Montserrat-Bold.ttf
+        - asset: assets/font/NotoSans-ExtraBold.ttf
+          weight: 900
+
+        - asset: assets/font/NotoSans-Bold.ttf
           weight: 700
 
-        - asset: assets/fonts/Montserrat-Medium.ttf
+        - asset: assets/font/NotoSans-SemiBold.ttf
+          weight: 600
+
+        - asset: assets/font/NotoSans-Regular.ttf
           style: normal
           weight: 400
 
-        - asset: assets/fonts/Montserrat-Light.ttf
+        - asset: assets/font/NotoSans-Light.ttf
+          weight: 200
+
+        - asset: assets/font/NotoSans-Italic.ttf
           style: italic

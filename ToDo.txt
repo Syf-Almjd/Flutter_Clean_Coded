@@ -33,7 +33,7 @@
 
 9. Icon Configuration:
    - Customize the app icon using `flutter_launcher_icons`. Run the command:
-
+   
        put
 flutter_icons:
   android: "launcher_icon"
@@ -48,7 +48,10 @@ flutter_icons:
      change image path location
      flutter pub run flutter_launcher_icons:main
 
-    then
+
+9. API key for Map (optional) Configuration:
+   - change the api key in Runner/AppDelegate.swift and main/AndroidManifest.xml:
+
 
 
 
@@ -134,8 +137,8 @@ Make sure to replace `"name of website"` with the actual name of your website in
     Reformat Code, Optimize Imports
     run cd .\android\
     run
-    keytool -genkey -v -keystore %location of .\android\ %\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
-    before your run code above, change location of .\android\
+    keytool -genkey -v -keystore ----%location of .\project\ %---- \android\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    before your run code above, change location of .\project\
     change file version
     change password and storeFile in key.properties ensure to use "\\" not "/"
 
