@@ -25,13 +25,13 @@ Follow these steps to get started with your Flutter Clean Architecture project:
 1. **Clone the Repository**:
 
    ```shell
-   git clone https://github.com/your-username/fluttre_clean_coded.git
+   git clone https://github.com/Syf-Almjd/fluttre_clean_coded.git
    ```
 
 2. **Navigate to the Project Directory**:
 
    ```shell
-   cd your-repo
+   cd fluttre_clean_coded
    ```
 
 3. **Get Dependencies**:
