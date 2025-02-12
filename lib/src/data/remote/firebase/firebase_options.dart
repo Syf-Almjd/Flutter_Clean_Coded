@@ -16,73 +16,10 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    if (kIsWeb) {
-      return web;
-    }
-    switch (defaultTargetPlatform) {
-      case TargetPlatform.android:
-        return android;
-      case TargetPlatform.iOS:
-        return ios;
-      case TargetPlatform.macOS:
-        return macos;
-      case TargetPlatform.windows:
-        return windows;
-      case TargetPlatform.linux:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
-      default:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions are not supported for this platform.',
-        );
-    }
+    return FirebaseOptions(
+        apiKey: "apiKey",
+        appId: "appId",
+        messagingSenderId: "messagingSenderId",
+        projectId: "projectId");
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCxPDyx9x6_OL1RKAhiQ5K3iFgHjcPRSsU',
-    appId: '1:362632243375:web:15851c89d51ecc6a1a0c5a',
-    messagingSenderId: '362632243375',
-    projectId: 'ayaat-airbnb',
-    authDomain: 'ayaat-airbnb.firebaseapp.com',
-    storageBucket: 'ayaat-airbnb.appspot.com',
-    measurementId: 'G-8P5RQ1HDH2',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBZ4AKCFZ3rxDrtL_ZCPeXZ6Di4x-IDs4g',
-    appId: '1:362632243375:android:b84f0f601613ddc91a0c5a',
-    messagingSenderId: '362632243375',
-    projectId: 'ayaat-airbnb',
-    storageBucket: 'ayaat-airbnb.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyARsBVg17rOErLAYAvchfjIBcEdkEgkKng',
-    appId: '1:362632243375:ios:91388913fd63fe961a0c5a',
-    messagingSenderId: '362632243375',
-    projectId: 'ayaat-airbnb',
-    storageBucket: 'ayaat-airbnb.appspot.com',
-    iosBundleId: 'com.seiasia.LKE GroupAirbnb',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyARsBVg17rOErLAYAvchfjIBcEdkEgkKng',
-    appId: '1:362632243375:ios:91388913fd63fe961a0c5a',
-    messagingSenderId: '362632243375',
-    projectId: 'ayaat-airbnb',
-    storageBucket: 'ayaat-airbnb.appspot.com',
-    iosBundleId: 'com.seiasia.LKE GroupAirbnb',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCxPDyx9x6_OL1RKAhiQ5K3iFgHjcPRSsU',
-    appId: '1:362632243375:web:eb0a6b99983bb3b01a0c5a',
-    messagingSenderId: '362632243375',
-    projectId: 'ayaat-airbnb',
-    authDomain: 'ayaat-airbnb.firebaseapp.com',
-    storageBucket: 'ayaat-airbnb.appspot.com',
-    measurementId: 'G-NKL0V76774',
-  );
 }

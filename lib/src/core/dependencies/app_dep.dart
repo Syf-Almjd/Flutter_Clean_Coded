@@ -18,7 +18,6 @@ class AppDependencies {
   static Future<void> appDependencies() async {
     WidgetsFlutterBinding.ensureInitialized();
     await AppDependencyInjector.init();
-
     await AppFirebaseSetup.init();
     await AppBlocObserver.init();
     await AppNotificationSetup.init();

@@ -14,7 +14,7 @@ Welcome to the Flutter Clean Architecture repository! This repository provides a
 - **Scalable**: The codebase is organized in a way that makes it easy to scale your application as it grows.
 - **Test-Driven Development (TDD)**: An example of TDD is provided, demonstrating how to write unit and widget tests for your application.
 - **Dependency Injection**: The project uses the `get_it` package for managing dependencies, making it easy to inject dependencies and maintain a clean codebase.
-- **State Management**: A simple and effective state management example using the `provider` package is included.
+- **State Management**: A simple and effective state management example using the `Bloc` package is included.
 - **Theming**: Basic theming is set up with a customizable color palette to help you quickly style your app.
 - **Folder Structure**: The project follows a clean and organized folder structure to make it easy to locate and manage your code.
 
@@ -79,7 +79,7 @@ flutter test
 - [Flutter](https://flutter.dev/): Framework for building natively compiled applications for mobile, web, and desktop from a single codebase.
 - [Dart](https://dart.dev/): The programming language used for Flutter development.
 - [Get It](https://pub.dev/packages/get_it): A simple service locator for Dart and Flutter projects.
-- [Provider](https://pub.dev/packages/provider): A state management solution that makes it easy to manage app-wide state.
+- [Bloc](https://pub.dev/packages/Bloc): A state management solution that makes it easy to manage app-wide state.
 
 ## 📢 Contributing
 
